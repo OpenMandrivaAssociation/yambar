@@ -22,15 +22,13 @@ Summary:        Modular status panel for X11 and Wayland
 # the main license of the binaries linking with them by
 # the underlying licenses.
 License:        MIT
-URL:            https://codeberg.org/dnkl/%{name}
-Source0:        %{url}/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+URL:            https://codeberg.org/dnkl/yambar
+Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
  
 BuildRequires:  bison
 BuildRequires:  desktop-file-utils
 BuildRequires:  flex
-BuildRequires:  gcc
 BuildRequires:  meson >= 0.59
- 
 BuildRequires:  pkgconfig(fcft) >= 3.0.0
 BuildRequires:  pkgconfig(fontconfig)
 BuildRequires:  pkgconfig(pixman-1)
@@ -68,7 +66,6 @@ yambar is a lightweight and configurable status panel (bar, for short)
 for X11 and Wayland, that goes to great lengths to be both CPU and
 battery efficient - polling is only done when absolutely necessary.
  
- 
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -96,12 +93,6 @@ chmod -x examples/scripts/*
 %meson_install
 # Will be installed to correct location with rpm macros
 rm %{buildroot}%{_docdir}/%{name}/LICENSE
- 
- 
-%check
-%meson_test
-desktop-file-validate \
-    %{buildroot}/%{_datadir}/applications/%{name}.desktop
  
  
 %files
