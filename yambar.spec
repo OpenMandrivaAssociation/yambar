@@ -8,7 +8,7 @@ end}
 %bcond_without  backend_x11
  
 Name:           yambar
-Version:        1.10.0
+Version:        1.11.0
 Release:        1
 Summary:        Modular status panel for X11 and Wayland
  
